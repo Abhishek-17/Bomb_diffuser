@@ -1,0 +1,56 @@
+#+TITLE: BOMB DEFUSER
+#+AUTHOR: ABHISHEK
+#+ROLL: 201101185
+* *Code Organisation*:
+** Robot():
+    - Ecapsulation has been used while implementing object _myrobot_ using _Robot_ function. An empty object b is created which holds the datafiels,flags etc. This Robot() module has following functions.
+	- Move_robot(): takes the key as argument and changes the to be coordinates of the robot
+	- check(): checks whether the newly generated coordinates by mve_robot are valid or not ,i.e. whethe the robot hits bomb without suffiecient decodes or whether it has crossed the game-window border etc.
+	- print_erase(): erases the previously existing robot characters
+	- create_robot(): creates robot at the new location just modified by move_robot function.
+	- getbo(): returns bombhit flag's value
+	- getbr(): returns bordercross flag's value
+     -Then an empty oject a() is created and is populated with the functions of Robot()
+	  
+* *classes*:
+	- just an empty class box has been used to give empty objects which are populated at later stage. Its methods are described above.
+
+* *Advantages*
+- Each module does its specific task. Also the modules are not harcoded. Its makes the modules reusable
+and also alllows  one to easily extend the game features like giving more levels or trying to print a different robot. So
+even when you come up with a new robot design ,just change your robor specifications. you dont need to wrinte another prit function.
+- Encapsulation has been used to avoid any accidental modification
+- Game speed and halting is appropriate 
+* *Miscellaneous*
+	- Bomb is planted to the specified coordinates.
+	- then defusers and mine are planted at locations whose coordinated donot coincide with dat of bomb ,robot or with each other.
+	- the robot starts to move in a default direction until a dirn key is pressed
+	- the key is sent to object's *move_robot()* module which modifies the future coordinates where the robot will go.
+	- then *check()* checks whether the coordinate is valid or not. If it coincides with ayn mine robot life's decreses,if its bomb's game ends,if its decode's the robot takes it.
+	- *print_erase()* module erases previous robot by printing spaces and *create_robot()* module then prints robot at the new location	
+	- P or p can be used to pause the game
+
+* *Extra features*
+        - The game begins with an intruction menu to give the user an idea of controls. 
+	- Colors:: robot and codes have green and mine and bomb has red color, helping user to easily differentiate.
+	- Levels:: there are at most 3 levels. U must win lower levels to go to higher ones.
+	- Mines:: if robot strikes mine its life decreases and after a limit the player looses.. No of mines and speed of robot increases with level.
+	- Animations: window-border and robot legs show movements. Paused message show on the window is also animated.
+	- At each time user can knoe his score, life etc by seeing the status shown on the top and bottom border of game windoe.
+	- Splash screens/messages are shown during pauses and after each level.
+
+* *Screeenshots*
+   - [[file:./screenshot1.png][Screenshot 1]]
+   - [[file:./screenshot2.png][Screenshot 2]]
+
+
+
+
+
+
+
+
+
+
+	
+	

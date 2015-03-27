@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+lang="en" xml:lang="en">
+<head>
+<title>BOMB DEFUSER</title>
+<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
+<meta name="generator" content="Org-mode"/>
+<meta name="generated" content="2012-03-28 21:54:54 IST"/>
+<meta name="author" content="ABHISHEK"/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  html { font-family: Times, serif; font-size: 12pt; }
+  .title  { text-align: center; }
+  .todo   { color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #add8e6; font-weight:normal }
+  .target { }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  p.verse { margin-left: 3% }
+  pre {
+	border: 1pt solid #AEBDCC;
+	background-color: #F3F5F7;
+	padding: 5pt;
+	font-family: courier, monospace;
+        font-size: 90%;
+        overflow:auto;
+  }
+  table { border-collapse: collapse; }
+  td, th { vertical-align: top; }
+  dt { font-weight: bold; }
+  div.figure { padding: 0.5em; }
+  div.figure p { text-align: center; }
+  .linenr { font-size:smaller }
+  .code-highlighted {background-color:#ffff00;}
+  .org-info-js_info-navigation { border-style:none; }
+  #org-info-js_console-label { font-size:10px; font-weight:bold;
+                               white-space:nowrap; }
+  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+                                 font-weight:bold; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+
+<h1 class="title">BOMB DEFUSER</h1>
+
+
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1 <b>Code Organisation</b>: </a>
+<ul>
+<li><a href="#sec-1.1">1.1 Robot(): </a></li>
+</ul>
+</li>
+<li><a href="#sec-2">2 classes: </a></li>
+<li><a href="#sec-3">3 <b>Advantages</b> </a></li>
+<li><a href="#sec-4">4 <b>Miscellaneous</b> </a></li>
+<li><a href="#sec-5">5 <b>Extra features</b> </a></li>
+<li><a href="#sec-6">6 <b>Screeenshots</b> </a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> <b>Code Organisation</b>: </h2>
+<div class="outline-text-2" id="text-1">
+
+
+</div>
+
+<div id="outline-container-1.1" class="outline-3">
+<h3 id="sec-1.1"><span class="section-number-3">1.1</span> Robot(): </h3>
+<div class="outline-text-3" id="text-1.1">
+
+<ul>
+<li>
+Ecapsulation has been used while implementing object <span style="text-decoration:underline;">myrobot</span> using <span style="text-decoration:underline;">Robot</span> function. An empty object b is created which holds the datafiels,flags etc. This Robot() module has following functions.
+<ul>
+<li>
+Move<sub>robot</sub>(): takes the key as argument and changes the to be coordinates of the robot
+</li>
+<li>
+check(): checks whether the newly generated coordinates by mve<sub>robot</sub> are valid or not ,i.e. whethe the robot hits bomb without suffiecient decodes or whether it has crossed the game-window border etc.
+</li>
+<li>
+print<sub>erase</sub>(): erases the previously existing robot characters
+</li>
+<li>
+create<sub>robot</sub>(): creates robot at the new location just modified by move<sub>robot</sub> function.
+</li>
+<li>
+getbo(): returns bombhit flag's value
+</li>
+<li>
+getbr(): returns bordercross flag's value
+</li>
+</ul>
+
+<p>-Then an empty oject a() is created and is populated with the functions of Robot()
+</p>
+</li>
+</ul>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> classes: </h2>
+<div class="outline-text-2" id="text-2">
+
+<ul>
+<li>
+just an empty class box has been used to give empty objects which are populated at later stage.
+
+</li>
+</ul>
+</div>
+
+</div>
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> <b>Advantages</b> </h2>
+<div class="outline-text-2" id="text-3">
+
+<ul>
+<li>
+Each module does its specific task. Also the modules are not harcoded. Its makes the modules reusable
+</li>
+</ul>
+
+<p>and also alllows  one to easily extend the game features like giving more levels or trying to print a different robot. So
+even when you come up with a new robot design ,just change your robor specifications. you dont need to wrinte another prit function.
+</p><ul>
+<li>
+Encapsulation has been used to avoid any accidental modification
+</li>
+<li>
+Game speed and halting is appropriate 
+</li>
+</ul>
+</div>
+
+</div>
+
+<div id="outline-container-4" class="outline-2">
+<h2 id="sec-4"><span class="section-number-2">4</span> <b>Miscellaneous</b> </h2>
+<div class="outline-text-2" id="text-4">
+
+<ul>
+<li>
+Bomb is planted to the specified coordinates.
+</li>
+<li>
+then defusers and mine are planted at locations whose coordinated donot coincide with dat of bomb ,robot or with each other.
+</li>
+<li>
+the robot starts to move in a default direction until a dirn key is pressed
+</li>
+<li>
+the key is sent to object's <b>move<sub>robot</sub>()</b> module which modifies the future coordinates where the robot will go.
+</li>
+<li>
+then <b>check()</b> checks whether the coordinate is valid or not. If it coincides with ayn mine robot life's decreses,if its bomb's game ends,if its decode's the robot takes it.
+</li>
+<li>
+<b>print<sub>erase</sub>()</b> module erases previous robot by printing spaces and <b>create<sub>robot</sub>()</b> module then prints robot at the new location     
+</li>
+<li>
+P or p can be used to pause the game
+
+</li>
+</ul>
+</div>
+
+</div>
+
+<div id="outline-container-5" class="outline-2">
+<h2 id="sec-5"><span class="section-number-2">5</span> <b>Extra features</b> </h2>
+<div class="outline-text-2" id="text-5">
+
+<ul>
+<li>
+The game begins with an intruction menu to give the user an idea of controls. 
+</li>
+<li>
+Colors:: robot and codes have green and mine and bomb has red color, helping user to easily differentiate.
+</li>
+<li>
+Levels:: there are at most 3 levels. U must win lower levels to go to higher ones.
+</li>
+<li>
+Mines:: if robot strikes mine its life decreases and after a limit the player looses.. No of mines and speed of robot increases with level.
+</li>
+<li>
+Animations: window-border and robot legs show movements. Paused message show on the window is also animated.
+</li>
+<li>
+At each time user can knoe his score, life etc by seeing the status shown on the top and bottom border of game windoe.
+</li>
+<li>
+Splash screens/messages are shown during pauses and after each level.
+
+</li>
+</ul>
+</div>
+
+</div>
+
+<div id="outline-container-6" class="outline-2">
+<h2 id="sec-6"><span class="section-number-2">6</span> <b>Screeenshots</b> </h2>
+<div class="outline-text-2" id="text-6">
+
+<ul>
+<li>
+<a href="./screenshot1.png">Screenshot 1</a>
+</li>
+<li>
+<a href="./screenshot2.png">Screenshot 2</a>
+
+
+
+
+
+
+
+
+
+
+
+
+</li>
+</ul>
+</div>
+</div>
+<div id="postamble">
+<p class="author"> Author: ABHISHEK
+<a href="mailto:user@LIB-EXT-1W24663">&lt;user@LIB-EXT-1W24663&gt;</a>
+</p>
+<p class="date"> Date: 2012-03-28 21:54:54 IST</p>
+<p class="creator">HTML generated by org-mode 6.33x in emacs 23</p>
+</div>
+</div>
+</body>
+</html>
